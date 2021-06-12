@@ -1,0 +1,102 @@
+:root {
+    --clr-neutral-900: hsl(207, 19%, 9%);
+    --clr-neutral-100:hsl(0, 0%, 100%);
+    --clr-accent-400:hsl(142, 90%, 61%);
+
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body{
+    display:grid;
+    min-height: 100vh;
+    place-items: center;
+    line-height: 1.2;
+    background: var(--clr-neutral-900);
+    font-family: "Times New Roman", Times, serif;
+
+}
+
+.card{
+    color:var(--clr-neutral-100);
+    background-image: url(image.jpg);
+    background-size: cover;
+    padding:10rem 0 0;
+    max-width: 125ch;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    padding-right: 15em;
+
+    transition: transform 500ms ease;
+}
+
+.card:hover{
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 1.5em;
+    background: linear-gradient(
+        hsl(0 0% 0% / 0),
+        hsl(20 0% 0% / 0.3) 20%,
+        hsl(0 0% 0% / 1)
+
+    );
+    transform: translateY(75%);
+    transition: transform 500ms ease;
+
+}
+
+.card:hover .card-content {
+    transform: translateY(0);
+
+}
+
+.card-title {
+    position: relative;
+    width: max-content;
+
+}
+
+
+
+.card-title::after {
+    content: "";
+    position: absolute;
+    height: 4px;
+    left: 0;
+    bottom: 0; 
+    width: 100%;
+    background: var(--clr-accent-400);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 500ms ease;
+}
+
+.card:hover  .card-title::after {
+      transform: scaleX(1);
+}
+.card-body{
+    color: rgb(255 255 255 /0.85);
+}
+
+.button{
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    color: var(--clr-neutral-900);
+    background-color: var(--clr-accent-400);
+    padding: 0.5em 1.2em;
+    border-radius: 0.25em;
+
+}
+
+.button:hover,
+.button:focus {
+    background-color: var(--clr-neutral-100);
+
+}
